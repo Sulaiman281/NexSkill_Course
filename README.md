@@ -12,7 +12,6 @@
     - Inspector
     - Scene Window
     - Game Window
-    - UMP
     - Hierarchy
     - Project Setting Window
 - Importing of Assets in UNITY
@@ -252,6 +251,11 @@ we will cover following topics by creating the our game scene.
           - Object which are not under camera perspective should not render.
         - Culling Mask
           - We Select the Layers Here which we want our camera to render.
+      - Leave the other Settings At Default You Will Understand them as you progress in your learning.
+## Creating Scene
+We Will Be Building A Simple Concert Stage Scene! Let's Learn To Import this Asset From Unity Asset Store.
+
+### [Unity Asset](https://assetstore.unity.com/packages/3d/props/interior/spotlight-and-structure-141453)
 
 
 
