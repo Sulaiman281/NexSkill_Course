@@ -255,7 +255,13 @@ we will cover following topics by creating the our game scene.
 ## Creating Scene
 We Will Be Building A Simple Concert Stage Scene! Let's Learn To Import this Asset From Unity Asset Store.
 
-### [Unity Asset](https://assetstore.unity.com/packages/3d/props/interior/spotlight-and-structure-141453)
+### [Click Me](https://assetstore.unity.com/packages/3d/props/interior/spotlight-and-structure-141453) To Download an asset we will be using to create our scene.
+
+our aim is to understand unity hierarchy and create a simple game scene.
+
+Here are the Actors we are going to use. you will find them in your course material.
+
+![alt text](image-10.png)
 
 
 
