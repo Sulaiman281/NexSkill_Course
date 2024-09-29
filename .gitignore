@@ -10,6 +10,8 @@
 /[Ll]ogs/
 /[Uu]ser[Ss]ettings/
 /Assets/AdvancedPeopleSystem2/
+/Assets/SpaceZeta_Spotlight/
+/Assets/Scenes/Playground/
 
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
@@ -47,6 +49,8 @@ ExportedObj/
 *.mdb
 *.opendb
 *.VC.db
+*.exr
+*.meta
 
 # Unity3D generated meta files
 *.pidb.meta

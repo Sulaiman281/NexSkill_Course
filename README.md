@@ -284,18 +284,109 @@ Here are the Actors we are going to use. you will find them in your course mater
 
 
 
+---
+# class summary 27-09-2024 Friday
+
+In Class we learned about unity editor Scene and created a scene 
+while creating the scene we understand 
+
+- Prefabs
+- How To Look as an Object perspective while desiging.
+- How we identify Object X,Y,Z
+- Global and Local Locations
+- Pivot Point and Center Point
+- Keeping Propotion and accurate space between objects while designing. using snap grid tool in unity
+- Mesh Filter Component
+  - we learned that it render the 3D mesh of an object
+- Mesh Renderer
+  - we learned that it is used. how it appears and act in our scene. does lights shadows can be cast on light? and Materials to add in this component for mesh visual presentation.
+
+After Class I have designed an complete Level Here [Click Me](https://youtu.be/VM36TQJrkqw) Just by following it up you can clear your concepts More!
+
+-----
+<!-- # Chapter 3: C# Scripting -->
+
+<!-- # Chapter 4: Advanced C# Scripting -->
+
+<!-- # Chapter 5: Canvas System - UI -->
+
+<!-- # Chapter 6: Physics -->
+
+# Chapter 7: Animations and Animator
+
+<!-- # Chapter 8: Ragdoll and Inverse Kinematics -->
+
+# Chapter 9: Lights
+Now Talking about the next class what will be we focusing on?
+
+Lightning and Animations
+
+let's understand some here!
+
+Lightning in Unity have 3 Modes
+- Realtime Lighting
+  - Description: Realtime lights are calculated and updated every frame during gameplay.
+  - Use Case: Ideal for dynamic scenes where lights or objects move frequently.
+  - Performance: More demanding on the GPU and CPU since calculations are done continuously.
+  - Example: A flashlight in a game that the player can move around.
+- Baked Lighting
+  - Description: Baked lights are pre-calculated and stored in lightmaps before the game runs.
+  - Use Case: Best for static scenes where lights and objects do not move.
+  - Performance: Less demanding during gameplay as the lighting is precomputed.
+  - Example: Sunlight in an outdoor scene where the environment remains static.
+- Mixed Lighting
+  - Description: Combines elements of both realtime and baked lighting. Direct lighting is calculated in real-time, while indirect lighting is precomputed.
+  - Use Case: Suitable for scenes with a mix of static and dynamic elements.
+  - Performance: More demanding than baked lighting but less so than fully realtime lighting.
+  - Example: A streetlight that casts dynamic shadows on moving characters but has static indirect lighting on the environment.
+
+Now this was about the light settings related. 
+
+Now let's understand what types of Objects we have in the Unity Editor for our game scene.
+![alt text](image-14.png)
+
+let's understand these lights and how they work in our scene
+- Directional Light
+  - Description: Simulates light from a distant source, like the sun. The light rays are parallel and affect all objects in the scene equally, regardless of their distance from the light.
+  - Use Case: Ideal for outdoor scenes where you need consistent lighting across a large area.
+  - Example: Sunlight in an open-world game.
+- Point Light
+  - Description: Emits light in all directions from a single point, similar to a light bulb. The intensity of the light diminishes with distance.
+  - Use Case: Best for localized light sources like lamps or torches.
+  - Example: A streetlamp illuminating a small area around it.
+- Spot Light
+  - Description: Emits light in a cone shape from a single point. The light intensity decreases with distance and the angle of the cone can be adjusted.
+  - Use Case: Useful for focused light sources like flashlights or stage lights.
+  - Example: A flashlight that the player can move around.
+- Area Light
+  - Description: Emits light from a rectangular or disc-shaped area. The light is distributed evenly across the surface of the area light but only from one side.
+  - Use Case: Suitable for large, soft light sources like windows or large overhead lights. Note that area lights are only available in baked lighting mode in Unity’s built-in render pipeline.
+  - Example: A large window casting soft light into a room.
 
 
 
+Now Let's understand more about Light Component
+![light-component](image-15.png)
 
+We Understand what is in the general Type and Mode which we have discus above.
 
+Now Focus On Emission Property
+- we have Light Appearance
+  - which have 2 types, colors, and filter & Temperatur
+  - basically what it does it manupilate the color of your light. 
+  - just picture you have a green bulbs all around your room and they are emmiting the green light. that's what the appearance type do. and below in the color property you can set your desired color.
+- Intensity
+  - Controls the Brightness of the light. Higher value makes the light brighter, while lower value dim it.
+- Indirect Multiplayer
+  - Adjust the intensity of the light that bounces off the surfaces
+- What is Indirect Light?
+  - Indirect Value is the strength of the light to bounces off an object or surface higher the value stronger the bounce will be.
+- Cookie is an texture effect we can assign to a light. to make it smooth, sharp or in some pattern.
 
+<!-- # Chapter 10: Audio Setup -->
 
+<!-- # Chapter 11: Navigation Basics -->
 
+<!-- # Chapter 12: Systems Basics -->
 
-
-
-
-
-
-
+<!-- # Chapter 13: Third Party Plugins/Essential Packages -->
