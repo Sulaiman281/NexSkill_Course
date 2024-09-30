@@ -1,6 +1,8 @@
 ![alt text](<nexskill logo.webp>)
 # Course Content
 
+## [Introduction](#introduction-1)
+
 ## [Chapter 1: Introduction to Game Engine and Unity Engine](#chapter-1)
 - Game Engines—What Are They?
 - The Unity Game Engine
@@ -90,7 +92,7 @@
 ## Chapter 8: Ragdoll and Inverse Kinematics
 - Apply IK on Humanoid Characters
 
-## Chapter 9: Lighting and Rendering
+## [Chapter 9: Lighting and Rendering](#chapter-9-lights)
 - Lighting Overview
 - Lights (All Types of Lights)
 - Using Skyboxes
@@ -134,9 +136,10 @@
 - Start Work on It After Approval (Show Progress While Working)
 - Project Submission
 
+---
 <!-- My Introduction -->
 
-## Introduction
+# Introduction
 
 MySelf Syed Suleman Shah Graduated as Software Engineer From University of Sindh Jamshoro.
 
@@ -312,7 +315,7 @@ After Class I have designed an complete Level Here [Click Me](https://youtu.be/V
 
 <!-- # Chapter 6: Physics -->
 
-# Chapter 7: Animations and Animator
+<!-- # Chapter 7: Animations and Animator -->
 
 <!-- # Chapter 8: Ragdoll and Inverse Kinematics -->
 
