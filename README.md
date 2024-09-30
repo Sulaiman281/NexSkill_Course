@@ -317,11 +317,9 @@ After Class I have designed an complete Level Here [Click Me](https://youtu.be/V
 <!-- # Chapter 8: Ragdoll and Inverse Kinematics -->
 
 # Chapter 9: Lights
-Now Talking about the next class what will be we focusing on?
 
-Lightning and Animations
-
-let's understand some here!
+To Make our scene visually appealing Unity Lights Play Fantastic Role, there is a lot of settings but if we cover the most important ones you can be able to create unity scene with fantastic lights. 
+by understanding about in unity creating scene and lights. stuff also with the optimization techniques. I have already made you level designer. you have the knowledge to create awesome looking 3D scene and light them. now it's all up to your creativity how you use this knowledge.
 
 Lightning in Unity have 3 Modes
 - Realtime Lighting
@@ -362,7 +360,6 @@ let's understand these lights and how they work in our scene
   - Description: Emits light from a rectangular or disc-shaped area. The light is distributed evenly across the surface of the area light but only from one side.
   - Use Case: Suitable for large, soft light sources like windows or large overhead lights. Note that area lights are only available in baked lighting mode in Unity’s built-in render pipeline.
   - Example: A large window casting soft light into a room.
-
 
 
 Now Let's understand more about Light Component
