@@ -1,5 +1,23 @@
 ![alt text](<nexskill logo.webp>)
-# Course Content
+
+# Benefits of Learning From Me.
+## I will build you by teaching you following and as you grow you have each of these skills in your pocket to start your freelancing career.
+### Level Designer.
+### Game Programmer.
+### Story Teller.
+### Non Player Controller (NPC).
+### Game Designer.
+### Multiplayer
+---
+---
+---
+---
+---
+---
+---
+---
+
+<!-- # Course Content
 
 ## [Introduction](#introduction-1)
 
@@ -136,7 +154,7 @@
 - Start Work on It After Approval (Show Progress While Working)
 - Project Submission
 
----
+--- -->
 <!-- My Introduction -->
 
 # Introduction
@@ -159,8 +177,8 @@ And I am here to share my experience with you! and teach you **Mobile Game Devel
 
 <!-- Chapter 1 Here Definitions -->
 ---
-
-# Chapter 1 
+# Class 1
+## Basics of the Game Engine.
 ### What is a Game Engine?
 A **game engine** is a software framework designed to simplify and streamline the game development process. It provides developers with a suite of tools and features to create video games, handling various aspects such as graphics, physics, audio, artificial intelligence (AI), and user input¹².
 
@@ -195,7 +213,7 @@ Unity Hub is an Application provide by Unity To Handle Unity Installation of dif
 Install any latest LTS (Long Term Supported) Version From Your Unity Hub. and make sure to check Android Dependencies To Include Them. as our focus will be on developing a Unity Mobile App.
 
 ------------------------------------------------
-# Chapter 2
+## Getting Started with Unity Editor
 Let's Understand The Basics of Unity Editor!
 
 First We Have Project Window
@@ -285,41 +303,9 @@ Here are the Actors we are going to use. you will find them in your course mater
 
 ![alt text](image-10.png)
 
-
-
----
-# class summary 27-09-2024 Friday
-
-In Class we learned about unity editor Scene and created a scene 
-while creating the scene we understand 
-
-- Prefabs
-- How To Look as an Object perspective while desiging.
-- How we identify Object X,Y,Z
-- Global and Local Locations
-- Pivot Point and Center Point
-- Keeping Propotion and accurate space between objects while designing. using snap grid tool in unity
-- Mesh Filter Component
-  - we learned that it render the 3D mesh of an object
-- Mesh Renderer
-  - we learned that it is used. how it appears and act in our scene. does lights shadows can be cast on light? and Materials to add in this component for mesh visual presentation.
-
-After Class I have designed an complete Level Here [Click Me](https://youtu.be/VM36TQJrkqw) Just by following it up you can clear your concepts More!
-
 -----
-<!-- # Chapter 3: C# Scripting -->
-
-<!-- # Chapter 4: Advanced C# Scripting -->
-
-<!-- # Chapter 5: Canvas System - UI -->
-
-<!-- # Chapter 6: Physics -->
-
-<!-- # Chapter 7: Animations and Animator -->
-
-<!-- # Chapter 8: Ragdoll and Inverse Kinematics -->
-
-# Chapter 9: Lights
+# Class 2 
+## Everything About Lights
 
 To Make our scene visually appealing Unity Lights Play Fantastic Role, there is a lot of settings but if we cover the most important ones you can be able to create unity scene with fantastic lights. 
 by understanding about in unity creating scene and lights. stuff also with the optimization techniques. I have already made you level designer. you have the knowledge to create awesome looking 3D scene and light them. now it's all up to your creativity how you use this knowledge.
@@ -383,6 +369,74 @@ Now Focus On Emission Property
   - Indirect Value is the strength of the light to bounces off an object or surface higher the value stronger the bounce will be.
 - Cookie is an texture effect we can assign to a light. to make it smooth, sharp or in some pattern.
 
+-----
+# Class 4
+## Intro Of Unity Game Components with examples
+## Components
+- Components are building Blocks that defines the behavior and appearance of an GameObjects.
+- Each GameObject can have multiple components attach to it, to achieve the desired functionality
+- in sort everything you see when you select a game object and you see in the inspector, you will find all the components of that specific game object.
+
+**Here is the list of common components**
+- **Transform**
+  - Transform is fundamental to every GameObject. it defines the object position, rotation and scale in 3D word space.
+  - You Can Not Remove the Transform Component from a game object.
+  - It helps you to move the object rotate it and scale it.
+- **Mesh Filter**
+  - In This Component We Assign a 3D Mesh Object.
+- **Mesh Renderer**
+  - This Components Draw the Mesh From Mesh Filter Component.
+  - It gives appearance using materials.
+  - We Can Set Light Impact In Settings.
+  - and other settings.
+- **Collider**
+  - Collider Defines Physical Shape of the 3D Object for physical interactions.
+  - Common Components Names
+    - Box Collider
+    - Capsule Collider
+    - Sphere Collider
+    - Mesh Collider
+  - It can detect collision and trigger events.
+- **RigidBody**
+  - Rigidbody components enables GameObject to act under the physics engine.
+  - When You add this components gravity force applied to it.
+  - It also enables the collider to triggers events such as triggers and collision.
+- **Camera and light**
+  - these are also components we have already covered in the previous sections.
+  
+- **Audio Source**
+  - It Plays the Audio Clips in the scene.
+  - this component has 2D and 3D settings to play the sound in specific area or global.
+  - volume to adjust volume.
+  - range to define the min and max range.
+  - and other filters.
+- **Animator**
+  - Animation component controls the animations for a Game Object.
+  - It Manages States, and transitions, layers allowing for complex animation sequence 
+  - example door opening and closing.
+  - a 3d human type character walking, running and jumping.
+- **UI Components**
+  - We Have multiple UI Components Main is Canvas inside Canvas we set all of our UI setup. like buttons, text and image etc.
+- **Scripts**
+  - We can write our own custom components with C#
+  - with custom script we can also modify the other components properties.
+  - some examples
+    - writing a player movement scripts
+    - a script to control the animator parameters
+    - a script to send event triggers and
+  - we can create any kind of script for our game object to achieve desire behavior.
+
+
+<!-- # Chapter 4: Advanced C# Scripting -->
+
+<!-- # Chapter 5: Canvas System - UI -->
+
+<!-- # Chapter 6: Physics -->
+
+<!-- # Chapter 7: Animations and Animator -->
+
+<!-- # Chapter 8: Ragdoll and Inverse Kinematics -->
+
 <!-- # Chapter 10: Audio Setup -->
 
 <!-- # Chapter 11: Navigation Basics -->
@@ -390,3 +444,40 @@ Now Focus On Emission Property
 <!-- # Chapter 12: Systems Basics -->
 
 <!-- # Chapter 13: Third Party Plugins/Essential Packages -->
+
+
+----
+----
+----
+# Class Summaries
+
+## class summary 27-09-2024 Friday
+
+In Class we learned about unity editor Scene and created a scene 
+while creating the scene we understand 
+
+- Prefabs
+- How To Look as an Object perspective while desiging.
+- How we identify Object X,Y,Z
+- Global and Local Locations
+- Pivot Point and Center Point
+- Keeping Propotion and accurate space between objects while designing. using snap grid tool in unity
+- Mesh Filter Component
+  - we learned that it render the 3D mesh of an object
+- Mesh Renderer
+  - we learned that it is used. how it appears and act in our scene. does lights shadows can be cast on light? and Materials to add in this component for mesh visual presentation.
+
+After Class I have designed an complete Level Here [Click Me](https://youtu.be/VM36TQJrkqw) Just by following it up you can clear your concepts More!
+
+
+---
+## class summary on 30/9/2024 Monday
+- we understood what are the light mode and we see the example
+- we studied all type of light objects in Directional, Spot, Point and we see their examples as well. we understood the light component
+- we understood how we bake the light.
+- we see the example of mix, bake and realtime lights
+- we created a small scene revise the previous section.
+
+
+## Class summary on 2/10/2024 Wednesday
+- practical work.
