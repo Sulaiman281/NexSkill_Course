@@ -427,6 +427,118 @@ Now Focus On Emission Property
   - we can create any kind of script for our game object to achieve desire behavior.
 
 
+# Class 5th Monday 7th Of October
+## Unity C# Custom Component Workflow and Time Settings.
+### Console log
+Before getting into detail let's understand first the console log. in unity this tab
+![console log](image-16.png) is called console log and here we see our logs from games 
+Logs has 3 types 
+- **Normal**  white text is normal
+- **Warning**   yellow text is warning
+- **Error**   red text is error
+  
+at the top right corner we have these buttons **|![console log buttons](image-17.png)|** normal, warning, and error buttons which can be disable and enabled on enabled our console logs window will show that selected type error, and on disable it won't show let's take an example you want to see the error you disable the normal and warning and enable the error button and it will show the errors text in red only.
+
+**In Simple Definition of console log** In The Console log window we can see our game errors, warning and our custom logs messages we print from the windows to identify. that our specific code part is working.
+
+### Visual Studio Code
+VS Code is Populer and powerful Code Editor from microsoft where you can code you any programming language. me after working in rider and visual studio. i found this very much comfortable as it allows me to code in other languages as well.
+
+
+You can [Download](https://code.visualstudio.com/Download). and Install
+
+once done then open it.
+![vs code unity extension](image-22.png)
+Click Into Extension Icon and search for Unity and install this extension.
+
+Now go the Edit >> Preference >> External Tools
+![External Tools Window](image-23.png)
+
+Select Visual Studio Code 
+
+![external script editor context menu](image-24.png)
+
+Then Go to Assets >> Open C# Project To Open the VS Code with Unity Project.
+
+You can install other unity extensions you like. but to keep it simple just Unity Extension from Microsoft is all you need to setup the VS Code with Unity.
+
+### Create Your Custom Script
+Select Your Game Object From hierarchy And In Inspector Add Component then Select New Script Option and Give Your Script Name and press Create and Add Button. it will create our Custom Component C# Script File into Asset Folder and Add it into our Game Object.
+
+![unity custom script.](image-25.png)
+
+
+we can also create our components from context menu in asset window. 
+
+then we can drag our file to selected game object inspector window to add the component.
+
+### MonoBehavior
+when we create custom components by writing c# scripts every script must extend a MonoBehavior class. like this
+```C#
+public class GameManager : MonoBehaviour
+{
+    
+}
+```
+**MonoBehavior** has life import like cycles which can be used to handle our game logics. following are the important methods
+- OnAwake()
+  - this method is called first time when our object is loaded in the game.
+  - it is only called once when loaded
+- OnStart()
+  - it called right after the OnAwake and first frame of Update method
+  - it is only called once on a object
+- OnUpdate()
+  - this method is called once per frame
+  - commonly use this to take user input and move objects etc.
+- OnFixedUpdate()
+  - Called at a fixed interval, independent of the frame rate.
+  - This method is called on our fixed value what we set in Time Settings by default it is 0.02 == 50 times per second. so it is called 50 times per minutes
+  - and it is mostly used for physics base calculation. our all the physics components which we add in a scene like RigidBody do it's calculation inside this method.
+  - this function called the cost performance so settings it's value in Time settings in Fixed Timestep property lower the value higher the calls results heavy performance higher the value results less calls and less performance usage. just remember 0.02 == 50 calls.
+  - we can use this method to do our own physics calculation as well like adding force of our kick in a football.
+- OnLateUpdate()
+  - This is called once per frame after all the update method calls in a scene.
+  - we can use it to follow up updates, such as camera movements updates right after the player movements.
+- OnEnabled()
+  - this method is called once when we enable our game object. ![alt text](image-19.png) that a property we can change in inspector to disable and enable a scene. inside red circle.
+  - these methods are only triggered when you are running the game.
+  - we can enable object from our code in game. 
+  - for test purpose we can run game and enable disable from inspector to test it.
+- OnDisabled()
+  - this method is called once when we disable our game object.
+- OnDestroy()
+  - this method is called once when we destroy our game object.
+
+
+**Key Notes**
+- Suppose we have 100 objects in a game when we call this any of the above method. that method take up it's load and performance and once all the 100 objects method are called then it moves to next method like all method loaded and called Awake method until all awake process method is done Update and Start does't get triggered. once Awake done we have first frame of Update method and as well Start then base on our fixedstep value our Fixed method is called. talk about our late update method it's called per frame but right after our Update method complete it's all process. 
+
+### Time Settings
+![time settings](image-20.png)
+- **Fixed Timestep**
+  - as we discuss before in fixed update method this values is for invoking FixedUpdate method per frame by default it's 0.02 == (50 times per frame)
+  - suppose your first scene is a menu where you have no game objects just user interface. pressing few buttons etc. so setting this value to 1 then it will be called only once per frame and reduce the unusual load on our CPU.
+- **Maximum Allowed Timestep**
+  - This setting limits how much time can accumulate before the physics engine updates.
+  - It prevents the physics simulation from running too many updates in a single frame if the game lags.
+  - if our physics calculation are suppose to take 0.5 seconds and our maximum allowed timestep is 0.333 means it has cross the threshold limit we have set for a frame to process so it will pause the physics engine and continue it from the next frame. to maintain our game fps and performance.
+  - if our fixed timestep value is set to 0.01 means 100 times fixed updates will get called and if these updates takes up our 0.016 (60 frames) that good but if it takes more time like 0.5 it our will pause and continue from our next frame. to avoid taking more time and performance.
+  - if we want our game to maintain 60 fps we can set it to 0.016 value. but we might compromise our physics of the game.
+- **Time Sale**
+  - it controls our game speed 1 is normal .5 is 50% slower and 0 means it's paused.
+- **Maximum Particle Timestep**
+  - This setting limits the maximum time step for particle systems.
+  - It ensures that particle simulations do not run too many updates in a single frame.
+  - similar to physics calculation. it pause the particle and continue in next frame when it cross the threshold.
+  
+**Notes**
+- these values can set adjust in runtime according to our scene. requirements.
+- remember maximum fixed timestep and maximum particle timestep can not be lower then fixed time step it can be equal or greater not less then.
+  
+![time settings](image-21.png)
+
+this example over here mean 100 fixed update calls per 0.01 seconds and they can take up to 0.1 seconds then it will move to next update. and particle can take only 0.02 seconds
+
 <!-- # Chapter 4: Advanced C# Scripting -->
 
 <!-- # Chapter 5: Canvas System - UI -->
@@ -481,3 +593,9 @@ After Class I have designed an complete Level Here [Click Me](https://youtu.be/V
 
 ## Class summary on 2/10/2024 Wednesday
 - practical work.
+
+## class summary on 4/10/2024 Friday 
+- we studied about unity components 
+- we discuss in depth about collider with practical example 
+- we understand how Rigidbody component works and physics forces.
+- we understand animator component overview the animator controller and created a fan animation clip.
