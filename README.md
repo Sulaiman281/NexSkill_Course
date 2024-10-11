@@ -481,22 +481,22 @@ public class GameManager : MonoBehaviour
 }
 ```
 **MonoBehavior** has life import like cycles which can be used to handle our game logics. following are the important methods
-- OnAwake()
+- Awake()
   - this method is called first time when our object is loaded in the game.
   - it is only called once when loaded
-- OnStart()
+- Start()
   - it called right after the OnAwake and first frame of Update method
   - it is only called once on a object
-- OnUpdate()
+- Update()
   - this method is called once per frame
   - commonly use this to take user input and move objects etc.
-- OnFixedUpdate()
+- FixedUpdate()
   - Called at a fixed interval, independent of the frame rate.
   - This method is called on our fixed value what we set in Time Settings by default it is 0.02 == 50 times per second. so it is called 50 times per minutes
   - and it is mostly used for physics base calculation. our all the physics components which we add in a scene like RigidBody do it's calculation inside this method.
   - this function called the cost performance so settings it's value in Time settings in Fixed Timestep property lower the value higher the calls results heavy performance higher the value results less calls and less performance usage. just remember 0.02 == 50 calls.
   - we can use this method to do our own physics calculation as well like adding force of our kick in a football.
-- OnLateUpdate()
+- LateUpdate()
   - This is called once per frame after all the update method calls in a scene.
   - we can use it to follow up updates, such as camera movements updates right after the player movements.
 - OnEnabled()
@@ -557,8 +557,202 @@ this example over here mean 100 fixed update calls per 0.01 seconds and they can
 
 <!-- # Chapter 13: Third Party Plugins/Essential Packages -->
 
+# Class 6th Wednesday on 9th of October
+## Programming fundamentals, understanding structure and Integrating third person start kit with practical work.
+
+### Programming Fundamentals
+- **Data:** Just think of that and tell me what comes in your mind? the data can be a person information, name, gender and sect. a data can be your bank balance it could be any piece of information. now to understand the data in programming let's make it more simple we have following data in the programming
+  - Integers: integers are numbers where we don't have any number after dot like 10.5. they are simple straight numbers like 1 2 3 4 5 6 they can be in negative or positive
+  - Decimals: decimals are the numbers like 10.5, 66.5, a number which has the number after dot.
+  - Characters: character or letter is a single any alphabetic letter or any symbol or any number inside single citation  like this example => `'a'` inside this we see `a` but it can be any letter you can see in your keyboard you can put inside these citation and it will be a character.
+  - Text: text is the collection of letters. a word, sentence or paragraph. we write the text data inside programming in double citation `"Hello I am a text a piece of information."`  this is `"` double citation you will find this symbol in the keyboard. and we place our text data inside it. and in programming it is mostly known as String data.
+  - Condition: a condition is either true or false. let's take an example: am i standing right now?. so it is true or false? if you can see me standing your logical thinking will say true because you see me standing right. and if i am sitting then answer to my question will be false. because i am sitting and i asked that `am i standing right now?`.
+- **Variables:** in programming we create variables to store the data. it holds the data we assign it. until our program is closed. or until that variable is in the use of process execution. let's take an example you want to store player name so we created a variable and stored the player name which is a data. right so we can do like this. `playerName = "Syed Suleman Shah"`.
+  - a variable can not contain any spaces.
+  - a variable can not start with any number.
+  - a variable can not contain any special symbol such as 
+    - arithmetic symbols: `(+,-,/,*)` addition, subtraction, division, and multiplication.
+    - assign symbols: `=, +=, -=, /=, *=` assign, add and assign, subtract and assign, divide and assign, multiply and assign. assign means it store the data into variable.
+    - conditional operators: `==, !=, >=, <=, >, <` equal to, not equal to, greater and equal to, less and equal to, greater then, less then.
+- **Data Types:** Data Types are the identification of the data that which data it is and what data type will be used for it. and in c# programming we have following data types.
+  - **int** => it is a keyword in programming language which represent data type. and int means integers and it is the identification for the integers.
+  - **float** => float data type is used for decimal values like 20.5f, 10.5f in c# if it is a float value it will have `f` in the end of the number which identifies it a float value.
+  - **double** => double is also identification of decimal values but it doesn't have `f` in the end. and the different between float and double is the range. range after the dot. is larder of numbers like `10.000010111111112312421123` and float has the lesser range.
+  - **string** => as we have discussed in the [data](#programming-fundamentals). any text inside double citation `"` is a string type data. 
+  - **char** => when you see a single letter inside single citation `'` that means it is character data and it has char as data type.
+  - **bool** => bool is a data type keyword and it is known as boolean. a data type which hold conditional data. as we have discussed above in the condition. so it hold either true or false.
+
+### Unity C# Programming Structure
+
+let's see this code example
+```c#
+using UnityEngine;
+
+public class GameManager : MonoBehaviour
+{
+
+}
+```
+in above code example in first line you see `using UnityEngine;` it's library or package we are using in this class. A library provides us the built in functionality which we use. and as we are learning unity C# this package provides us unity built in functionality. like that `MonoBehavior` which is parent of our current class. `GameManager` in previous class we had understand about custom components so when you create a custom components you give it a name and I have created my own custom component and I call it `GameManager` when you create your own custom component you can name it as you like.
+
+In C# our basic C# code we place all of our logic inside a class so we write like
+```c#
+public class YourClassName
+{ // this is opening bracket
+
+} // and this is closing bracket.
+```
+
+look close to above brackets these brackets define the body. of the class now everything inside these brackets are the part of the class. and in above code example you see `:` this  collin symbols this means that this class is inherited from `MonoBehavior` by inheriting all of the functionalities in Mono Behavior comes in our class.
+
+**How we identify a method?**
+
+in c# our a method has 2 types one a void method and 2nd which return some data so we give it data type keyword of the data it suppose to return. we start with access identifier `public, private` which means that this method will only work inside the class or it can be called from other classes as well. so as there names `public` means that it can be access from outside. and `private` means it can be access from only within the class.
+
+```c#
+public class YourClassName
+{
+  public void YourMethodName(){
+
+  }
+}
+```
+
+now we have a method inside our class and as you can see that method is define between classes opening and closing brackets `{}` and method has also opening and closing brackets `{}`. and if you noticed method has also small brackets after it's name `()` now inside these brackets we pass the parameters *(parameters are the variables we pass inside the method brackets)*  example
+
+```c#
+public class YourClassName
+{
+  public void YourMethodName(string playerName)
+  {
+
+  }
+}
+```
+
+you see we passed a parameters `string playerName` which pass a text data and what is the data? it's our player name. 
+
+**How we understand the variables which pass the data.**
+
+a variable has 3 state in which 
+  - we create a variable and initialize it 
+  - 2nd we use the variable somewhere. 
+  - third we change the value of that variable.
+
+to create a variable first we give it's data type then we write our variable name, and then we can initialize it or end it `;` semi-colin  example
+
+```c#
+public class GameManager
+{
+  // here we have created a variable of integer and we didn't initialize it.
+  public int count;
+  // here we have created text variable and initialize with the a data of Syed Suleman Shah.
+  public string playerName = "Syed Suleman Shah";
+
+  public void Awake()
+  {
+    // here we have assign it's value to 0
+    count = 0; 
+  }
+
+  public void Update()
+  {
+    // here we are increasing our count value by 1. changing it.
+    count++;
+
+    // we can also do like this
+    count += 1;
+
+    // also like this
+    count = count + 2;
+  }
+}
+```
+
+in c# let me tell you there are `global` and `local` variables. global variables are created outside of the method and local variables are created inside of the variables.
+
+like example
+
+```c#
+public class GameManager : MonoBehavior
+{
+  // here is the example of global variable 
+  public int counter;
+
+  private void Awake()
+  {
+    // here is the example of local variable which will be only limited to this method awake.
+    int timer;
+  }
+}
+```
 
 ----
+
+# Class 7: Practical Tasks To Perform.
+
+## Import the Starter Kit Third Person Controller.
+
+### Step 1
+
+[Click Me](https://assetstore.unity.com/packages/essentials/starter-assets-thirdperson-updates-in-new-charactercontroller-pa-196526) to add this unity asset into your library. as we have learned before.
+
+### Step 2
+Go To your unity Editor in windows context menu select package manager.
+
+windows > package manager.
+
+![alt text](image-26.png)
+
+Inside Package Manager Select Starter Asset - ThirdPerson and download then import into your project.
+
+![alt text](image-27.png)
+
+if you see this warning press install / upgrade it will install following packages from package manager. 
+
+- CineMachine
+- new input system
+
+we will study these 2 packages in detail in upcoming classes. for now just follow the steps.
+
+![alt text](image-28.png)
+
+### Test The Third Person and Enjoy.
+
+Go To Directory > 
+
+Open the PlayGround Scene and Enjoy.
+
+### How to use Third Person Prefabs in to Your Scene?
+Go To StarterAssets > ThirdPersonController > Prefabs
+![alt text](image-29.png)
+
+Select  following prefabs. drag and drop them into your scene.
+- MainCamera
+  - to add this make sure to delete the other Main Camera Object From the scene first then add this one.
+- PlayerArmature
+- PlayerFollowCamera
+
+**Now we need to setup our camera to our player.**
+Select The Player Follow Camera And Inside The Inspector Menu Check out the component. we need to add Player Camera Target Object into `Follow` and `Look At` property See In the Image Below.
+
+![alt text](image-31.png)
+
+Now Select This `PlayerCameraRoot` Object From PlayerArmature and drag and place it into above properties.
+
+![alt text](image-30.png)
+
+Make Sure Your Main Camera Object Contains the CinemachineBrain Component. Check The Below Image.
+
+![alt text](image-32.png)
+
+
+**once you follow all these steps our third person controller is setup.**
+
+## Run and Test.
+
+## Congratulation! You Have Added Third Person In Your Project.
+
 ----
 ----
 # Class Summaries
@@ -599,3 +793,100 @@ After Class I have designed an complete Level Here [Click Me](https://youtu.be/V
 - we discuss in depth about collider with practical example 
 - we understand how Rigidbody component works and physics forces.
 - we understand animator component overview the animator controller and created a fan animation clip.
+
+
+## class summary on 7/10/2024 Monday
+- we understand console and types of logs
+- we understand MonoBehavior and it's life cycles 
+  - Update
+  - FixedUpdate
+  - LateUpdate
+  - Awake
+  - Start
+  - OnDestroy
+  - OnDisabled
+  - OnEnabled
+
+## class summary on 9/10/2024 Wednesday
+- we discussed fundamentals of programming.
+  - data
+  - variable
+  - data types in c#
+  - conditional statements
+  - loops
+- we learned how we can read and understand the code.
+- we understood about collider events OnTriggerEnter and OnTriggerExit
+- we written this code 
+
+```c#
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class AutomaticDoor : MonoBehaviour
+{
+    public GameObject leftDoor;
+    public GameObject rightDoor;
+
+    public Animator animator;
+
+    // public float leftDoorClosingX;
+    // public float rightDoorClosingX;
+    // public float leftDoorOpeningX;
+    // public float rightDoorOpeningX;
+
+    // public float doorMovingTime;
+
+    // private Vector3 leftDPos;
+    // private Vector3 rightDPos;
+
+    private bool IsNearDoor;
+
+    private void Start()
+    {
+        // leftDPos = leftDoor.transform.localPosition;
+        // rightDPos = rightDoor.transform.localPosition;
+
+        animator.SetBool("IsNearTheDoor", false);
+    }
+
+    private void Update()
+    {
+        // if (IsNearDoor)
+        // {
+        //     leftDPos.x = leftDoorOpeningX;
+        //     rightDPos.x = rightDoorOpeningX;
+        //     leftDoor.transform.localPosition = Vector3.Lerp(leftDoor.transform.localPosition, leftDPos, Time.time / doorMovingTime);
+        //     rightDoor.transform.localPosition = Vector3.Lerp(rightDoor.transform.localPosition, rightDPos, Time.time / doorMovingTime);
+        // }
+        // else
+        // {
+        //     leftDPos.x = leftDoorClosingX;
+        //     rightDPos.x = rightDoorClosingX;
+        //     leftDoor.transform.localPosition = Vector3.Lerp(leftDoor.transform.localPosition, leftDPos, Time.time / doorMovingTime);
+        //     rightDoor.transform.localPosition = Vector3.Lerp(rightDoor.transform.localPosition, rightDPos, Time.time / doorMovingTime);
+        // }
+    }
+
+    private void OnTriggerEnter(Collider collider)
+    {
+        if (collider.tag.Equals("Player"))
+        {
+            Debug.Log("Player is near the door!");
+            IsNearDoor = true;
+            animator.SetBool("IsNearTheDoor", IsNearDoor);
+        }
+    }
+
+    private void OnTriggerExit(Collider collider)
+    {
+        if (collider.tag.Equals("Player"))
+        {
+            Debug.Log("Player is far from the door!");
+            IsNearDoor = false;
+            animator.SetBool("IsNearTheDoor", IsNearDoor);
+        }
+    }
+}
+
+```
