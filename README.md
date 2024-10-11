@@ -753,6 +753,115 @@ Make Sure Your Main Camera Object Contains the CinemachineBrain Component. Check
 
 ## Congratulation! You Have Added Third Person In Your Project.
 
+# Task 2
+You Need to complete previous task to start this task. in here we are going to create a box and inside box we will add a ball and we will create a trigger point for player to apply force in the ball.
+
+### [Check out the output here](https://youtu.be/aoEB63E-m1c)
+
+
+![task-2 preview](image-33.png)
+
+## Step: 1 Create A Box.
+Design Your Box. see in the image below I have used cube scale it and places it all around to create the box shape.
+
+
+![box](image-34.png)
+
+
+## Step: 2 Create A Ball
+
+Create a 3D Sphere and add `RigidBody` Component to it. then create a physics material in your asset window.
+
+![physic material inspector](image-35.png)
+
+in physic material we have following properties
+- **Dynamic Friction:** The friction coefficient when two objects are moving relative to each other. Lower values make the surfaces more slippery when in motion.
+
+- **Static Friction:** The friction coefficient when two objects are at rest relative to each other. This controls how much force is needed to start moving an object at rest.
+
+- **Bounciness:** A measure of how much an object will bounce back after hitting a surface. Higher values result in more bounce.
+
+- **Friction Combine:** Determines how the friction coefficients of two colliding surfaces are combined. Options are Average, Minimum, Maximum, and Multiply.
+
+- **Bounce Combine:** Similar to Friction Combine, but for bounciness. Options also include Average, Minimum, Maximum, and Multiply.
+
+
+**Add Physics Material into ball collider**
+In `Sphere Collider` component drag and drop the physic material in material property. for the reference see the image below
+
+![alt text](image-36.png)
+
+Put the Ball Inside the Box. when all set. ready to next step
+
+## Step: 3 Create a Trigger Point
+
+**Trigger Visuals:** In Games Visual is important to give the player sign to make him curious and take action towards the visuals. In our scene I have a foot mat.
+By Creating an Object with cube and place it. like this
+
+![alt text](image-37.png)
+
+for this appearance I have used this [image here](https://www.myhomedecor.pk/product/door-mat-foot-mat-ftgr18/) download it and add into your assets directory of the project.
+
+then drag and drop it into your material base map property.
+like this
+
+![alt text](image-38.png)
+
+we have set our trigger visuals now let's add a trigger collider where we can detect that player has enter into this foot mat.
+
+In Below Image I have added just a collider and mark true to ![alt text](image-40.png) Is Trigger Property.
+
+![collider](image-39.png)
+
+
+Now To Identify if the player enter this trigger it's invoke an event.
+
+## Step: 4 Custom Component.
+
+let's create a custom component by creating new script make sure you add this script in the object where you have added that collider which will detect user.
+
+![alt text](image-41.png)
+
+let's look into the Code I have created to Identify the user enter.
+
+```C#
+using UnityEngine;
+
+public class BallGame : MonoBehaviour
+{
+  // this over here speed property. 
+    public float speed = 10;
+    // a force direction variable which will be used to set the direction for the ball where it should move.
+    public Vector3 forceDirection;
+
+    // here is the rigidbody component variable. 
+    // we will use this to apply force in given direction.
+    public Rigidbody ballRb;
+
+// as we now that OnTriggerEnter method only called when another collider go though this isTrigger Collider.
+    private void OnTriggerEnter(Collider other)
+    {
+      // over here we are checking if the object which collide with our trigger collider is player or not. it will work if our player Game Object tag is set to this Player.
+        if (other.CompareTag("Player"))
+        {
+            ballRb.AddForce(forceDirection * speed, ForceMode.Impulse);
+        }
+    }
+}
+
+```
+
+this is how it will look inside the inspector. our custom script. 
+- **speed:** here we can set the speed value.
+- **force direction** force direction is Vector3 type and it takes 3 parameters X, Y, and Z. if you want the ball only moves upwards make X and Z to 0 and set Y some value.
+- **Ball rb** we need to assign our ball RigidBody. where we will apply the force when player enters into our trigger.
+
+![alt text](image-42.png)
+
+Now it suppose to give you [this](https://youtu.be/aoEB63E-m1c) kind of results.
+
+**Play and Test how it works. if your code is working so many congratulations.**
+
 ----
 ----
 # Class Summaries
@@ -763,11 +872,11 @@ In Class we learned about unity editor Scene and created a scene
 while creating the scene we understand 
 
 - Prefabs
-- How To Look as an Object perspective while desiging.
+- How To Look as an Object perspective while designing.
 - How we identify Object X,Y,Z
 - Global and Local Locations
 - Pivot Point and Center Point
-- Keeping Propotion and accurate space between objects while designing. using snap grid tool in unity
+- Keeping Proportion and accurate space between objects while designing. using snap grid tool in unity
 - Mesh Filter Component
   - we learned that it render the 3D mesh of an object
 - Mesh Renderer
