@@ -10,7 +10,14 @@
 ### Multiplayer
 ---
 ---
+# Classes
+- [Basics Of Game Development And Unity](#class-1-basics-of-the-game-engine)
+- [Everything about lightning.](#class-2-everything-about-lights)
+- [Unity Game Components and there overview](#class-4-intro-of-unity-game-components-with-examples)
+- [Custom Component MonoBheavior Cycle and Time Settings](#class-5th-monday-7th-of-october-unity-c-custom-component-workflow-and-time-settings)
+- [programming structure and fundamentals](#class-6th-programming-fundamentals-understanding-structure-and-integrating-third-person-start-kit-with-practical-work)
 ---
+# [Summaries](#class-summaries)
 ---
 ---
 ---
@@ -158,7 +165,6 @@
 <!-- My Introduction -->
 
 # Introduction
-
 MySelf Syed Suleman Shah Graduated as Software Engineer From University of Sindh Jamshoro.
 
 I have been doing Freelance since end of 2020. I Have worked on small to large application. in game development Mobile, PC, VR And WebGL also as backend Programmer I have developed Rest Apis, Multiplayer Game Servers. and so on.
@@ -174,6 +180,11 @@ And I am here to share my experience with you! and teach you **Mobile Game Devel
 |                                                                         |
 ---------------------------------------------------------------------------
 ```
+
+
+# Guide Related Performing Task
+[![Watch this video](https://img.youtube.com/vi/W3oqmlT_fMk/0.jpg)](https://www.youtube.com/watch?v=W3oqmlT_fMk)
+
 # Tasks: By Working on the following tasks. You Will be Android Developer In No Time.
   - [Implement Third Person StartKit](#task-1-import-the-starter-kit-third-person-controller)
   - [Ball Inside Box](#task-2-ball-inside-box)
@@ -181,8 +192,7 @@ And I am here to share my experience with you! and teach you **Mobile Game Devel
 
 <!-- Chapter 1 Here Definitions -->
 ---
-# Class 1
-## Basics of the Game Engine.
+# Class 1 Basics of the Game Engine.
 ### What is a Game Engine?
 A **game engine** is a software framework designed to simplify and streamline the game development process. It provides developers with a suite of tools and features to create video games, handling various aspects such as graphics, physics, audio, artificial intelligence (AI), and user input¹².
 
@@ -308,8 +318,7 @@ Here are the Actors we are going to use. you will find them in your course mater
 ![alt text](image-10.png)
 
 -----
-# Class 2 
-## Everything About Lights
+# Class 2 Everything About Lights
 
 To Make our scene visually appealing Unity Lights Play Fantastic Role, there is a lot of settings but if we cover the most important ones you can be able to create unity scene with fantastic lights. 
 by understanding about in unity creating scene and lights. stuff also with the optimization techniques. I have already made you level designer. you have the knowledge to create awesome looking 3D scene and light them. now it's all up to your creativity how you use this knowledge.
@@ -374,8 +383,7 @@ Now Focus On Emission Property
 - Cookie is an texture effect we can assign to a light. to make it smooth, sharp or in some pattern.
 
 -----
-# Class 4
-## Intro Of Unity Game Components with examples
+# Class 4 Intro Of Unity Game Components with examples
 ## Components
 - Components are building Blocks that defines the behavior and appearance of an GameObjects.
 - Each GameObject can have multiple components attach to it, to achieve the desired functionality
@@ -431,8 +439,7 @@ Now Focus On Emission Property
   - we can create any kind of script for our game object to achieve desire behavior.
 
 
-# Class 5th Monday 7th Of October
-## Unity C# Custom Component Workflow and Time Settings.
+# Class 5th Monday 7th Of October Unity C# Custom Component Workflow and Time Settings.
 ### Console log
 Before getting into detail let's understand first the console log. in unity this tab
 ![console log](image-16.png) is called console log and here we see our logs from games 
@@ -561,8 +568,7 @@ this example over here mean 100 fixed update calls per 0.01 seconds and they can
 
 <!-- # Chapter 13: Third Party Plugins/Essential Packages -->
 
-# Class 6th Wednesday on 9th of October
-## Programming fundamentals, understanding structure and Integrating third person start kit with practical work.
+# Class 6th Programming fundamentals, understanding structure and Integrating third person start kit with practical work.
 
 ### Programming Fundamentals
 - **Data:** Just think of that and tell me what comes in your mind? the data can be a person information, name, gender and sect. a data can be your bank balance it could be any piece of information. now to understand the data in programming let's make it more simple we have following data in the programming
@@ -693,7 +699,7 @@ public class GameManager : MonoBehavior
 
 ----
 
-# Class 7: Practical Tasks To Perform.
+# Practical Tasks To Perform.
 
 ## Task 1: *Import the Starter Kit Third Person Controller.*
 
@@ -914,11 +920,8 @@ Now it suppose to give you [this](https://youtu.be/aoEB63E-m1c) kind of results.
 
 **Great Work You Should be able to achieve like [this](https://www.youtube.com/embed/cQ8x56Ap0jY)**
 
-<center>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/cQ8x56Ap0jY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</center>
+[![Watch this video](https://img.youtube.com/vi/cQ8x56Ap0jY/0.jpg)](https://www.youtube.com/watch?v=cQ8x56Ap0jY)
 
-----
 ----
 # Class Summaries
 
