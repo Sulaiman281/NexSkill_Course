@@ -174,6 +174,10 @@ And I am here to share my experience with you! and teach you **Mobile Game Devel
 |                                                                         |
 ---------------------------------------------------------------------------
 ```
+# Tasks: By Working on the following tasks. You Will be Android Developer In No Time.
+  - [Implement Third Person StartKit](#task-1-import-the-starter-kit-third-person-controller)
+  - [Ball Inside Box](#task-2-ball-inside-box)
+  - [Coin Picker](#task-3-coin-picker-game)
 
 <!-- Chapter 1 Here Definitions -->
 ---
@@ -691,7 +695,7 @@ public class GameManager : MonoBehavior
 
 # Class 7: Practical Tasks To Perform.
 
-## Import the Starter Kit Third Person Controller.
+## Task 1: *Import the Starter Kit Third Person Controller.*
 
 ### Step 1
 
@@ -700,26 +704,22 @@ public class GameManager : MonoBehavior
 ### Step 2
 Go To your unity Editor in windows context menu select package manager.
 
-windows > package manager.
+- windows > package manager.
+- ![alt text](image-26.png)
 
-![alt text](image-26.png)
+- Inside Package Manager Select Starter Asset - ThirdPerson and download then import into your project.
+- ![alt text](image-27.png)
 
-Inside Package Manager Select Starter Asset - ThirdPerson and download then import into your project.
-
-![alt text](image-27.png)
-
-if you see this warning press install / upgrade it will install following packages from package manager. 
-
-- CineMachine
-- new input system
+- if you see this warning press install / upgrade it will install following packages from package manager. 
+  - CineMachine
+  - new input system
 
 we will study these 2 packages in detail in upcoming classes. for now just follow the steps.
-
-![alt text](image-28.png)
+  - ![alt text](image-28.png)
 
 ### Test The Third Person and Enjoy.
 
-Go To Directory > 
+- Go To Directory > StarterAssets > ThirdPersonController > Scenes > PlayGround
 
 Open the PlayGround Scene and Enjoy.
 
@@ -753,7 +753,7 @@ Make Sure Your Main Camera Object Contains the CinemachineBrain Component. Check
 
 ## Congratulation! You Have Added Third Person In Your Project.
 
-# Task 2
+## Task 2 Ball Inside Box.
 You Need to complete previous task to start this task. in here we are going to create a box and inside box we will add a ball and we will create a trigger point for player to apply force in the ball.
 
 ### [Check out the output here](https://youtu.be/aoEB63E-m1c)
@@ -861,6 +861,60 @@ this is how it will look inside the inspector. our custom script.
 Now it suppose to give you [this](https://youtu.be/aoEB63E-m1c) kind of results.
 
 **Play and Test how it works. if your code is working so many congratulations.**
+
+## Task 3: *Coin Picker Game!*
+
+- **Step 1:** Create a New 3D Project Select Universal 3D Template Give Your Project Name, and Select Destination Folder and Create the project.
+  - ![unity hub new project](image-43.png)
+- **Step 2:** Go To File > Build Settings > Select Android and Press the Switch Platform Button.
+  - ![build settings](image-44.png)
+- **Step 3:** Implement Third Person Controller. As I have guided you in [Task 1](#task-1-import-the-starter-kit-third-person-controller)
+- **Step 4:** Open PlayGround Scene From Third Person Controller.
+- **Step 5:** Design Your Level as You Like.
+- **Step 6:** Test Your Game On Mobile.
+  - Go To PlayStore on your phone. And Search for Unity Remote and Install that application.
+  - Enable USB Debugging In Your Phone.
+    - Go To Settings In Your Phone And Find `build number` in your phone and keep tapping it. to enable to developer mode.
+    - once you have enabled developer mode. go to the developer mode and enable use debugging.
+    - now connect your phone with the your PC.
+    - Once You Connected Your Phone You Will be able to see it in Run Device build settings unity. just like shown in the picture. select it.
+      - ![alt text](image-45.png)
+    - Now Go To The Edit > Project Settings > Editor and Select `Any Android` In Unity Remote Option.
+      - ![alt text](image-46.png)
+    - Now Open Your Unity Remote Application In Your Phone And Play The Game In The Unity.
+- **It's Your Big Achievement if you have Completed this step. Bravo!**
+- **Step 7:** Create A Coin GameObject And Make it Prefab.
+  - ![coin prefab](image-47.png)
+- **Step 8:** Make the Coin Pickable
+  - Add Box Collider Component In Parent Object And Modify Center and Size As You see it fit.
+  - ![example](image-48.png)
+  - Make Sure To Enable IsTrigger Option.
+  - Now Let's Create Custom Component Script And Name It `CoinPickable`
+  - ```c#
+    using UnityEngine;
+
+    public class CoinPickable : MonoBehaviour
+    {
+      // as we know that this method is called when any physical object interact with a collider when it's isTrigger property is enabled.
+        private void OnTriggerEnter(Collider other)
+        {
+          // here `other` is the object which is collided with our coin. and we are comparing it's tag to see if the object is player or not.
+            if (other.CompareTag("Player"))
+            {
+              // console log message to see our player picked the coin.
+                Debug.Log("Coin picked up!");
+            }
+
+            // destroy our game object once picked up.
+            Destroy(gameObject);
+        }
+    }
+
+    ```
+
+**Great Work You Should be able to achieve like [this](https://www.youtube.com/embed/cQ8x56Ap0jY)**
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/cQ8x56Ap0jY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ----
 ----
