@@ -922,6 +922,82 @@ Now it suppose to give you [this](https://youtu.be/aoEB63E-m1c) kind of results.
 
 [![Watch this video](https://img.youtube.com/vi/cQ8x56Ap0jY/0.jpg)](https://www.youtube.com/watch?v=cQ8x56Ap0jY)
 
+## Task 4 Animate Our Coin In Our Coin Maker.
+- **Step 1:** Open Our Coin Prefab From Asset Folder.
+  - Open Animation Window `Ctrl+6` ShortCut Key
+  - Select Our Coin Object Which We Want to Rotate To Create Animation.
+  - In Animation Window Press `Create` Button To Create Animation Select Your Directory Where You Want to Save Your Animation.
+  - **Verify That Our Animation Is Created**
+    - Select Our Coin Object And In Inspector Window You will see Animator Component like in the image below.
+      - ![alt text](image-49.png)
+  - **Animate Your Coin:**
+    - Red Button in the animation window when you enable it. it start recording the animation. on the duration you have select. what ever you made changes in the game object components. you change position or scale or rotation or you have done any changes in any component. it will record that change in the keyframe 
+    - you create your own animation for the coin. you can increase and reduce scaling or rotation the object on Y-axis like I did.
+    - In The Below Image I have created two keyframes one at the start and one at the end. and in those 2 keys frame i am just changing Y value. you can try next step with scaling.
+    - ![coin animation](image-50.png)
+  - Exit From The Prefab Hierarchy By Pressing Back Arrow At the left corner.
+  - ![prefab](image-51.png)
+  - Now You are in the scene Hierarchy
+  - ![scene](image-52.png)
+  - **Play The Game And Share the Results In the Group.**
+- **Fantastic You Have learned and did a practical on animation. now you suppose to be understanding more about animation and adding stuff together to create our game functional.**
+- Before You Just studied theoretical concepts about these and did example separately now you have used these concepts and created a small scene. where our player is picking the coins. and coin also showing a animation which gives us alive feeling in the game.
+
+## Task 5 Deploy Game Into Your Phone.
+  - **Step 1:** One of the above task I have taught you How to connect your phone with the unity editor. follow that step and connect your phone with your unity.
+    - go the build settings to verify in run device.
+    - ![build-settings](image-53.png)
+  - **Step 2:** Let's understand the build settings first.
+    - Go The Project Settings > Player
+      - here you can Give Your Project Name, Organization / company name and version.
+      - You can add your game logo here. size should be from 200x200 to 600x600 pick any sizes in these range.
+      - ![alt text](image-54.png)
+    - In Resolution and Presentation.
+      - leave the other settings as default we will understand the important one.
+      - **Orientation** how our apps open, in landscape or in portrait. base on the game you can set this in the settings. now according to our game I would like to set it in landscape 
+        - default rotation set to auto rotation and 2nd auto rotation behavior to user.
+        - now the only rotation i want to allow in landscape Right or left. however user feels the comfortable.
+        - ![orientation settings](image-55.png)
+    - In Other Settings
+      - there are a lot of settings leave most of them default just understand the important one.
+      - first texture compression.
+      - ![alt text](image-56.png)
+        - texture compression format. 
+          - compression: to reduce some size or quality. for the performance. we use different compression methods.
+          - ETC, ETC2, ASTC, DXT, DXT+ RGTC(BC4, BC5) 
+          - these all are compression formats. I will use here ASTC because it's low the texture size which also effect some quality of the texture but in mobile it's hard to notice that quality.
+          - let's just set it ASTC.
+    - In Other Settings Under Configuration
+      - ![configuration-settings](image-57.png)
+        - **Scripting Backend:** IL2CPP and Mono we have to scripting configuration for android device we mostly need ARM64 which comes under the IL2CPP so set it's value to IL2CPP.
+        - **ARM64:** enable this. as i said above we need this enabled for android devices.
+    - **identification Settings** this one is important.
+      - package name. you can write your own here or it will pick from your company and project name
+      - package name is required and every running app has there package name. and when we publish our app. this package name is also required in the settings on the play-store. 
+      - Minimum API Level. it will build your apk to support phones who has at least android version you have selected.
+        - if you don't know about android versions. you can go into about phone and check your android version. if your android version is lower then what is in the unity minimum api level then you might need to upgrade your phone.
+      - Target API Level. by default it is set to automatic but if you want to target a specific android version you can select here.
+      - ![identification](image-58.png)
+  - let's understand about the build settings 
+  - ![build-settings](image-59.png)
+    - in this build settings window on the top you will see `Scenes In Build` in here we add the scenes we want to build. if you press the `add open scenes` it will add currently active scene into scenes in build. you can also drag and drop your scene in here.
+    - scenes here are stored in indexed which start from 0 and number increases as we add more. and unity will open the first scene which will be at index 0. by default and then we can change the scene. from our code which we will cover while developing this game.
+  - **Add Android Controls from starter third person asset:** before we build the game. we will need the controls for the android. so we will use prefab given in starter third person asset.
+  - Go to StarterAssets > Mobile > Prefabs > CanvasInputs
+  - select your prefab and add it into your scene. if you using `Playground` scene from this asset you should have this in your scene hierarchy select it and enable the Game Object.
+  - ![alt text](image-60.png)
+ 
+  Cool So here we understood the project settings. now we are ready to build our apk.
+
+  - make sure you have select new input system  in project other settings. it can not be both for android. ![alt text](image-62.png)
+
+  go to your build settings and make sure your phone is connected. and press `Build And Run` if your project contains no errors it will start build and install the apk in your phone.
+  you can press just `build` it will build and apk into your selected directory.
+  I prefer to create a new build folder into project directory and build my project file into build directory or folder.
+  ![alt text](image-61.png)
+
+**After Completing the following steps you should be able to run your game into your phone.**
+**Share Your ScreenShots In the whatsapp group.**
 ----
 # Class Summaries
 
@@ -1058,3 +1134,8 @@ public class AutomaticDoor : MonoBehaviour
 }
 
 ```
+
+## class summary on 14/10/2024 Monday
+Practical Tasks
+
+## class summary on 16/10/2024 Wednesday
