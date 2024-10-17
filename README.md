@@ -19,6 +19,17 @@
 ---
 # [Summaries](#class-summaries)
 ---
+
+# Guide Related Performing Task
+[![Watch this video](https://img.youtube.com/vi/W3oqmlT_fMk/0.jpg)](https://www.youtube.com/watch?v=W3oqmlT_fMk)
+
+# Tasks: By Working on the following tasks. You Will be Android Developer In No Time.
+  - [Task 1: Implement Third Person StartKit](#task-1-import-the-starter-kit-third-person-controller)
+  - [Task 2: Ball Inside Box](#task-2-ball-inside-box)
+  - [Task 3: Coin Picker](#task-3-coin-picker-game)
+  - [Task 4: Animate Coin](#task-4-animate-our-coin-in-our-coin-maker)
+  - [Task 5: Build Your First Apk](#task-5-deploy-game-into-your-phone)
+
 ---
 ---
 ---
@@ -180,15 +191,6 @@ And I am here to share my experience with you! and teach you **Mobile Game Devel
 |                                                                         |
 ---------------------------------------------------------------------------
 ```
-
-
-# Guide Related Performing Task
-[![Watch this video](https://img.youtube.com/vi/W3oqmlT_fMk/0.jpg)](https://www.youtube.com/watch?v=W3oqmlT_fMk)
-
-# Tasks: By Working on the following tasks. You Will be Android Developer In No Time.
-  - [Implement Third Person StartKit](#task-1-import-the-starter-kit-third-person-controller)
-  - [Ball Inside Box](#task-2-ball-inside-box)
-  - [Coin Picker](#task-3-coin-picker-game)
 
 <!-- Chapter 1 Here Definitions -->
 ---
@@ -998,6 +1000,92 @@ Now it suppose to give you [this](https://youtu.be/aoEB63E-m1c) kind of results.
 
 **After Completing the following steps you should be able to run your game into your phone.**
 **Share Your ScreenShots In the whatsapp group.**
+
+# Task 6: Game UI UX Design, Menus Scene Management.
+- **What is UI and UX?** 
+  - UI means User Interface, The visuals you present in the screen is the UI. how it looks and how it is structured.
+  - UX means User Experience, How user interact with each option. is the UX easy to understand. easy to adapt and easy to use.
+- **Game Menus**
+  - Have you ever notice why menus of the games are so smooth? why they take no navigate from one page to another smoothly. unlike game. which runs in a 3D or 2D space. game user interface runs in a canvas. which render only when it is updated by hand. example from a main menu where you have list of option (play, settings, quit) and player press settings and page is changed to settings. it's only updated when it's required unlike 2d, 3d space they frequently updates in milliseconds.
+  - let's create a menu scene in which we have following options.
+    - we ask player to enter his name in a `InputField`.
+    - we add button to start the game by pressing `Start` button.
+- **Step 1:** Understand and Create Canvas.
+  - right click on the asset window and create a new scene and name it Menu.
+  - in menu we don't need any lights or camera. unless we are doing some 3D work in our menu scene. in my case i won't be doing any 3D work it will be simple menu so I will delete the camera and directional lights in the object. but before deleting I want to tell you one important thing. camera has a component which listen to the audio. if you remove the camera you won't listen and sfx (sound effect) if you add for button sounds etc. so if you have any sound effect you can create an empty game object and add component `Audio Listeners` into it. Audio Listener is you ears from which you listen the audio. in your game world. or menus.
+  - Now let's Create A Canvas. right click in the hierarchy go to UI > Canvas. Create `Canvas` in your scene. now in your scene their are 2 game objects created. one canvas and other `EventSystem`
+    - ![canvas-event](image-63.png)
+  - **Canvas:**
+    - Select the canvas game object and see it's inspector components
+      - ![canvas inspector](image-64.png)
+      - in normal game object we have transform but in canvas we have Rect Transform. because transform works in 2d or 3D environment where our rect transform works on our screens. every UI game object will be created inside this canvas. to make them work all the objects must be created inside the canvas. Canvas will be parent of all UI object only then they can work as we want them to work.
+      - we have the following components and I am doing to discuss each of them in detail.
+      - Canvas Component
+        - Render mode types.
+          - ![canvas render types](image-65.png)
+            - Screen Space - Overlay
+              - it is rendered on our screen. 
+            - Screen Space - Camera
+              - it is rendered in front of the camera.
+            - Word Space
+              - it is rendered in 3D world space.
+          - note: if you use Screen Space you won't need camera but for other two types. camera is must be added in the scene.
+          - for our scene we will stick with Screen Space - Overlay (Overlay means on top of)
+        - Leave the reset options as in default. but to avoid the warning in Vertex Color Always In Gamma Mark it True.
+      - Canvas Scaler.
+        - UI Scale Mode. it types define how UI is scaled on the screen.
+          - Constant Pixel Size: 
+            - The UI elements maintain a constant pixel size regardless of screen size. This is best for fixed-size UIs.
+          - Scale with Screen Size: 
+            - The UI elements scale proportionally with the screen size. This is ideal for responsive UIs that adjust to different resolutions.
+          - Constant Physical Size: 
+            - The UI elements maintain a constant physical size, irrespective of the screen’s pixel density. This is used for UIs that need to stay the same physical size across different devices.
+        - My favorite is Scale with Screen size. because it's adaptable to any mobile screen. and we are going to use it in our game. so select the Scale with Screen Size.
+        - with each type you get different types of parameters below it. 
+        - ![screen size type](image-66.png)
+          - Reference Resolution: here we can define our width and height of the resolution. let's make it 720p 1280 width and 720 height.
+          - Select Screen Match Mode to Expend For Now. You can Try different as you like and test the output how it looks.
+      - Graphic Raycaster.
+        - it is the canvas component which helps to interact with the UI component. if you remove it you won't be able to press any buttons and write to any input fields.
+        - it won't be needed to UI pages which has just information to show.
+    - here we discuss in detail about the canvas game object. I hope you understand everything. if not drop the question in the group. and here is the final canvas inspector view.
+    - ![final canvas inspector view.](image-67.png) 
+    - we might need this canvas settings in other scenes as well. so I am going to create it's prefab.
+    - Drag and Drop the Canvas Game Object into your prefab folder.
+  - **All Common Components We Can Create for UI**
+    - ![canvas ui context menu](image-70.png)
+    - **Canvas Renderer** component and it is required with all UI component which are going to be visually visible in Canvas.
+    - **Image** this component support sprites and we can use the image component to create some cool UI designs as well like, health bar, timer, progress bar. and a lot and it's only take an sprite when you add an png file into your assets that's not an sprite by default.
+      - ![alt text](image-71.png) 
+        - select any image in you asset window and check the inspector window.
+        - in the first property name texture type look into it. you will see multiple options. by default it has default type but if we want to use that image inside our Image component we need to set the type as sprite.
+      - Raycast target mean that can we click it or not.
+      - *Raycast Padding* by default all of the area of our object in intractable we can set some padding. from left, right top and down to reduce the area. to click.
+      - we will understand other parameters in the flow.
+      - for now leave the settings as it is. and just change the background color which you like for you menu.
+      - ![alt text](image-69.png)
+        - make sure alpha value is full 255
+    - **Text-TextMeshPro** Text Mesh Pro is Rich Text UI provide by unity. you can customized fonts, change text alignment, we can adjust font size, and style. create one object and test the properties by changing them all.
+    - **Raw Image** you can use this component. to add any image format. png or jpg but preferred jpg. and it has less features then image component. and very much useful if you just want to place fixed images.
+    - **TextMeshPro-InputField** This Component use to take input from the user. and it has many properties such as which type of input we want to take? is it a number or a text or a decimal. how many characters we can enter 10 characters or 500 characters. is this InputField is for password? then it should be visible or invisible. a input field contain 2 children both Text Component Game Object one used for hint, and other used for the value. user going to enter.
+    - **Toggle** toggle component provide us a checkbox which we can use to get condition true or false. let's say if we are asking is Are You Male? and give him a checkbox. if user is a male he will tick it to make it true or un-tick it to make it false.
+    - **Slider** slider component in UI can be used for volume. and also we can use it to create health bar or progress bar. it has a minimum value and a maximum value and as we move the slider from left to right values increases if we move the slider from right to left the value is decreased.
+    - **Button** we all know what is a button right. we press it to execute an event. in the following image reference. there is on OnClick Event listeners we register our events in here. so when button is clicked those events are triggered. 
+      - button contain a single child a Text component. where we can write button name. let's say a `Start` button or a `Quit` button.
+      - ![alt text](image-72.png)
+  - overview is enough for necessary components we can add inside our canvas. now design your Menu as you like. 
+  - **EventSystem** EventSystem is required component for canvas if we want to interact with canvas like pressing button. giving values in input fields. etc
+    - by default EventSystem use old Input System for interaction if you have new input system installed. a error would be appearing in the inspector like in image below saying `Replace with InputSystemUIInputModule` press that button and it will replace it with new input system.
+    - ![default event system](image-73.png)
+  - **Common Events in UI components.**
+    - UI components has common events for the interaction with Mouse or Touch On Mobiles.
+      - **OnHoverEnter** it's triggered via mouse when we are moving mouse on top of that component so as our mouse get close. it trigger the event OnHover.
+      - **OnHoverExit** when we move mouse away from the component.
+      - **OnPressDown** when we click and holding down the button of our mouse or touch. we haven't released the button yet.
+      - **OnPressUp** when we release our button hold. this event get triggered.
+      - **Note** hover doesn't work on touch just with mouse device.
+  - Design Your Menu Scene. Here is Mine.
+  ![alt text](image-74.png)
 ----
 # Class Summaries
 
@@ -1139,3 +1227,5 @@ public class AutomaticDoor : MonoBehaviour
 Practical Tasks
 
 ## class summary on 16/10/2024 Wednesday
+we discussed about player settings, build settings and deployed our application into mobile.
+task 4 and 5th we worked on.
