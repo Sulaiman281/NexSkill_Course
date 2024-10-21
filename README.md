@@ -29,6 +29,9 @@
   - [Task 3: Coin Picker](#task-3-coin-picker-game)
   - [Task 4: Animate Coin](#task-4-animate-our-coin-in-our-coin-maker)
   - [Task 5: Build Your First Apk](#task-5-deploy-game-into-your-phone)
+  - [Task 6: Deeply Understand Canvas and UI/UX And Create Your Main Menu](#task-6-game-ui-ux-design-menus-scene-management)
+  - [Task 7: Mark Tick In The WhatsApp that You have completed the following task.](#task-7-complete-your-coin-game-following-parts)
+  - [Task 8: Create Obstacle In The Game.](#task-8-create-obstacles-for-player-to-get-hit-and-die)
 
 ---
 ---
