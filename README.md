@@ -1086,6 +1086,130 @@ Now it suppose to give you [this](https://youtu.be/aoEB63E-m1c) kind of results.
       - **Note** hover doesn't work on touch just with mouse device.
   - Design Your Menu Scene. Here is Mine.
   ![alt text](image-74.png)
+
+# Task 7 Complete Your Coin Game Following Parts.
+  - You Created New Coin Picker Project.
+  - You Important Third Person Controller Start Kit.
+  - You Created Coin Prefab and Attach Collider and Script To Pick it up.
+  - You Created Menu and attach the script.
+  - Make Sure Your Game is working upto this.
+
+[![Follow This To Create Main Menu](https://img.youtube.com/vi/22jrW3I4el4/0.jpg)](https://www.youtube.com/watch?v=22jrW3I4el4)
+```c#
+using UnityEngine;
+using TMPro;
+using UnityEngine.SceneManagement;
+
+public class MenuManager : MonoBehaviour
+{
+    // we need our inputField to store the player's name
+    [SerializeField] private TMP_InputField playerName_InputField;
+
+    [SerializeField] private GameObject error_msg;
+    [SerializeField] private GameObject loading_panel;
+
+    private void Awake()
+    {
+        // we will hide the error message at the beginning
+        error_msg.SetActive(false);
+        loading_panel.SetActive(false);
+    }
+
+
+    // this method will be called when the player clicks on the "Start" button
+    public void StartGame()
+    {
+        // if the player's name is empty, we will not start the game
+        if (string.IsNullOrEmpty(playerName_InputField.text))
+        {
+            Debug.Log("Please enter your name");
+            error_msg.SetActive(true);
+            Invoke(nameof(HideErrorMsg), 3.5f);
+            return;
+        }
+
+        Debug.Log("Player's name: " + playerName_InputField.text + " - Starting the game...");
+        loading_panel.SetActive(true);
+        Invoke(nameof(ChangeSceneToGame), 2f);
+    }
+
+    private void HideErrorMsg()
+    {
+        error_msg.SetActive(false);
+    }
+
+    private void ChangeSceneToGame()
+    {
+        // we will change the scene to the game scene
+        SceneManager.LoadScene(1);
+    }
+
+}
+```
+----
+
+# Task 8: Create Obstacles For Player To Get Hit And Die!
+[![Understand the reference](https://img.youtube.com/vi/PYPKAHL13hU/0.jpg)](https://www.youtube.com/watch?v=PYPKAHL13hU)
+```c#
+using UnityEngine;
+
+public class ObstacleCutter : MonoBehaviour
+{
+    [Header("References")]
+    public Rigidbody rb;
+    public GameObject fanObject;
+
+    [Header("Settings")]
+    public float fanSpeed = 1000f;
+    public float moveSpeed = 10f;
+    public float moveRadius = 10f;
+
+    private Vector3 targetPosition = Vector3.zero;
+
+    private void Start()
+    {
+        GetRandomMoveDirection();
+    }
+
+    private void FixedUpdate()
+    {
+        Move();
+    }
+
+    private void Move()
+    {
+        if (HasReachedDestination())
+        {
+            GetRandomMoveDirection();
+        }
+
+        // formula to calculate the direction to move.
+        Vector3 direction = (targetPosition - transform.position).normalized;
+
+        // rigidbody.AddForce(direction * moveSpeed * Time.deltaTime, ForceMode.VelocityChange);
+
+        rb.MovePosition(transform.position + direction * moveSpeed * Time.deltaTime);
+
+        // rotate fan on y-axis
+        fanObject.transform.Rotate(Vector3.up, fanSpeed * Time.deltaTime);
+    }
+
+
+
+    private void GetRandomMoveDirection()
+    {
+        targetPosition = new Vector3(Random.Range(-moveRadius, moveRadius), 0, Random.Range(-moveRadius, moveRadius));
+    }
+
+    private bool HasReachedDestination()
+    {
+        return Vector3.Distance(transform.position, targetPosition) < 1f;
+    }
+}
+
+```
+
+
 ----
 # Class Summaries
 
