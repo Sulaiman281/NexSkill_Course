@@ -7,8 +7,8 @@ public class CoinPickable : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Debug.Log("Coin picked up!");
+            PlaygroundManager.Instance.PickCoin();
+            Destroy(gameObject);
         }
-
-        Destroy(gameObject);
     }
 }
