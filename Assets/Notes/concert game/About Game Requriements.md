@@ -55,3 +55,27 @@ add small tuck shops in our scene. where player can buy burger, or other foods y
 
 
 ## after singer finished 2-3 songs. our game ends. with good bye menu. and in the end show credits.
+
+
+## To-Do List
+
+| Task | Description | Status |
+|------|-------------|--------|
+| Task 1 | Setup The Environment | [ ] |
+| Task 2 | Place our NPC (Non Player Controllable) | [ ] |
+| Task 3 | Create our Player | [ ] |
+| Task 4 | Create our security check in guard functionality | [ ] |
+| Task 5 | Create Shop Functionality | [ ] |
+| Task 6 | Create Mini Game Ground | [ ] |
+| Task 7 | Our singer | [ ] |
+| Task 8 | Tuck shops | [ ] |
+| Final Task | End game with good bye menu and credits | [ ] |
+
+### Example To-Do List
+
+To tick a checkbox, replace `[ ]` with `[x]`.
+
+
+
+
+
