@@ -109,9 +109,20 @@ public class NPC_Talker : MonoBehaviour
 
         // play dialog
         dialogManagerUI.ShowDialog(dialogues[currentDialogueIndex]);
+
     }
 
+    public void PlayDialogIndex(int index)
+    {
+        currentDialogueIndex = index;
+        PlayDialog();
+    }
 
+    public void ResetState()
+    {
+        currentDialogueIndex = 0;
+        SetState(TalkerState.Idle);
+    }
 }
 
 public enum TalkerState

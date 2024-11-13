@@ -9,6 +9,7 @@ public class DialogManagerUI : MonoBehaviour
     [SerializeField] private GameObject dialogPanel;
     [SerializeField] private TMP_Text dialogTitle_text;
     [SerializeField] private TMP_Text dialogDescription_text;
+    [SerializeField] private AudioSource globalAudioSource;
 
     [Header("Settings")]
     [SerializeField] private float letterPerSecond = 0.065f;
@@ -43,6 +44,8 @@ public class DialogManagerUI : MonoBehaviour
         dialogPanel.SetActive(true);
         onDialogStarted.Invoke();
 
+        PlayVoice(dialogue.voiceOver);
+
         dialogTitle_text.text = "";
         dialogDescription_text.text = "";
 
@@ -58,11 +61,34 @@ public class DialogManagerUI : MonoBehaviour
             yield return new WaitForSeconds(letterPerSecond);
         }
 
-        yield return new WaitForSeconds(delayAfterDialog);
-        dialogPanel.SetActive(false);
+        float totalTextDuration = (dialogue.title.Length + dialogue.description.Length) * letterPerSecond;
 
-        onDialogEnded.Invoke();
+        if(dialogue.voiceOver != null)
+        {
+            float remainingDuration = dialogue.voiceOver.length - totalTextDuration;
+       
+            if(remainingDuration >= 0)
+            {
+                yield return new WaitForSeconds(remainingDuration);
+            }
+        }
+
+
+        yield return new WaitForSeconds(delayAfterDialog);
 
         _isWritingDialog = false;
+        dialogPanel.SetActive(false);
+        onDialogEnded.Invoke();
+    }
+
+    private void PlayVoice(AudioClip voiceOver)
+    {
+        if(voiceOver == null)
+        {
+            return;
+        }
+
+        globalAudioSource.clip = voiceOver;
+        globalAudioSource.Play();
     }
 }

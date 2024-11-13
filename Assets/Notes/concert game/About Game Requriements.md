@@ -61,9 +61,9 @@ add small tuck shops in our scene. where player can buy burger, or other foods y
 
 | Task | Description | Status |
 |------|-------------|--------|
-| Task 1 | Setup The Environment | [ ] |
-| Task 2 | Place our NPC (Non Player Controllable) | [ ] |
-| Task 3 | Create our Player | [ ] |
+| Task 1 | Setup The Environment | [X] |
+| Task 2 | Place our NPC (Non Player Controllable) | [X] |
+| Task 3 | Create our Player | [X] |
 | Task 4 | Create our security check in guard functionality | [ ] |
 | Task 5 | Create Shop Functionality | [ ] |
 | Task 6 | Create Mini Game Ground | [ ] |
