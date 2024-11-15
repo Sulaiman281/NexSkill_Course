@@ -5,7 +5,7 @@ using UnityEngine;
 public class SecurityGuard : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] private NPC_Talker npcTalker;
+    [SerializeField] private NPC_Talker bodyguard;
 
     [Header("Settings")]
     [SerializeField] private int ticketConfirmIndex = 1;
@@ -15,7 +15,7 @@ public class SecurityGuard : MonoBehaviour
 
     public void CheckTicket()
     {
-        if (npcTalker == null)
+        if (bodyguard == null)
         {
             Debug.LogError("NPC Talker is not assigned!");
             return;
@@ -23,12 +23,12 @@ public class SecurityGuard : MonoBehaviour
 
         if(ConcertManager.Instance.Inventory.hasTicket)
         {
-            npcTalker.PlayDialogIndex(ticketConfirmIndex);
+            bodyguard.PlayDialogIndex(ticketConfirmIndex);
             //TODO: open the gate.
         }
         else
         {
-            npcTalker.PlayDialogIndex(ticketDenyIndex);
+            bodyguard.PlayDialogIndex(ticketDenyIndex);
         }
     }
 }

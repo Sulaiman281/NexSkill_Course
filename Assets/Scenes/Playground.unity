@@ -169,7 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0939ee98e035f5e4685d437075cd1b92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  npcTalker: {fileID: 798877640}
+  bodyguard: {fileID: 798877640}
   ticketConfirmIndex: 1
   ticketDenyIndex: 2
 --- !u!1 &53421477
@@ -613,7 +613,7 @@ PrefabInstance:
     - target: {fileID: 4990460310295508363, guid: e94cd5266c4fffe4184f3258cdf2d7ef,
         type: 3}
       propertyPath: m_Name
-      value: Floor Type 2 (4)
+      value: Floor Type 2 (2)
       objectReference: {fileID: 0}
     - target: {fileID: 4990460310295508363, guid: e94cd5266c4fffe4184f3258cdf2d7ef,
         type: 3}
@@ -1260,7 +1260,7 @@ PrefabInstance:
     - target: {fileID: 4990460310295508363, guid: e94cd5266c4fffe4184f3258cdf2d7ef,
         type: 3}
       propertyPath: m_Name
-      value: Floor Type 2 (5)
+      value: Floor Type 2 (3)
       objectReference: {fileID: 0}
     - target: {fileID: 4990460310295508363, guid: e94cd5266c4fffe4184f3258cdf2d7ef,
         type: 3}
@@ -3298,7 +3298,7 @@ PrefabInstance:
     - target: {fileID: 4990460310295508363, guid: e94cd5266c4fffe4184f3258cdf2d7ef,
         type: 3}
       propertyPath: m_Name
-      value: Floor Type 2 (2)
+      value: Floor Type 2 (5)
       objectReference: {fileID: 0}
     - target: {fileID: 4990460310295508363, guid: e94cd5266c4fffe4184f3258cdf2d7ef,
         type: 3}
@@ -4668,7 +4668,7 @@ PrefabInstance:
     - target: {fileID: 4990460310295508363, guid: e94cd5266c4fffe4184f3258cdf2d7ef,
         type: 3}
       propertyPath: m_Name
-      value: Floor Type 2 (3)
+      value: Floor Type 2 (4)
       objectReference: {fileID: 0}
     - target: {fileID: 4990460310295508363, guid: e94cd5266c4fffe4184f3258cdf2d7ef,
         type: 3}
@@ -4784,7 +4784,7 @@ PrefabInstance:
     - target: {fileID: 4990460310295508363, guid: e94cd5266c4fffe4184f3258cdf2d7ef,
         type: 3}
       propertyPath: m_Name
-      value: Floor Type 2
+      value: Floor Type 2 (1)
       objectReference: {fileID: 0}
     - target: {fileID: 4990460310295508363, guid: e94cd5266c4fffe4184f3258cdf2d7ef,
         type: 3}
@@ -7945,7 +7945,7 @@ PrefabInstance:
     - target: {fileID: 4990460310295508363, guid: e94cd5266c4fffe4184f3258cdf2d7ef,
         type: 3}
       propertyPath: m_Name
-      value: Floor Type 2 (1)
+      value: Floor Type 2
       objectReference: {fileID: 0}
     - target: {fileID: 4990460310295508363, guid: e94cd5266c4fffe4184f3258cdf2d7ef,
         type: 3}

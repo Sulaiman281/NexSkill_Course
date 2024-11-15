@@ -4,3 +4,5 @@ https://assetstore.unity.com/packages/vfx/particles/particle-collection-skj-2016
 https://assetstore.unity.com/packages/vfx/particles/particle-pack-127325
 
 https://assetstore.unity.com/packages/essentials/starter-assets-thirdperson-updates-in-new-charactercontroller-pa-196526
+
+https://assetstore.unity.com/packages/p/spotlight-and-structure-141453
