@@ -7,7 +7,7 @@ public class CheckPoint : MonoBehaviour
     [SerializeField] private Transform target; // target for which our checkpoint is made
 
     [Header("Settings")]
-    [SerializeField] private string targetTagName;
+    [SerializeField] private string targetTagName; // target object tag name when it collider our checkpoint will invoke events
 
     [Header("Events")]
     public UnityEvent onCheckPointTriggered;
