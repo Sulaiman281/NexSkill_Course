@@ -9276,7 +9276,19 @@ PrefabInstance:
       propertyPath: m_LookAt
       value: 
       objectReference: {fileID: 158978555}
-    m_RemovedComponents: []
+    - target: {fileID: 6851170616712508379, guid: a1a802ecaf6775746bb2a929fb554ad8,
+        type: 3}
+      propertyPath: Target.LookAtTarget
+      value: 
+      objectReference: {fileID: 158978555}
+    - target: {fileID: 6851170616712508379, guid: a1a802ecaf6775746bb2a929fb554ad8,
+        type: 3}
+      propertyPath: Target.TrackingTarget
+      value: 
+      objectReference: {fileID: 158978555}
+    m_RemovedComponents:
+    - {fileID: 2070925441746177913, guid: a1a802ecaf6775746bb2a929fb554ad8, type: 3}
+    - {fileID: 4487202075979060101, guid: a1a802ecaf6775746bb2a929fb554ad8, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
