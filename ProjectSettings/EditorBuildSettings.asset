@@ -6,11 +6,17 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Menu.unity
-    guid: 224b60a9bc3926449a68c014255380f3
+    path: Assets/GameFlow/Init.unity
+    guid: 388e6dfde577f214996fd9aebc46b77f
   - enabled: 1
-    path: Assets/ExternalAssets/StarterAssets/ThirdPersonController/Scenes/Playground.unity
-    guid: e9017d5f96b9f09489b4b37e1d6eb914
+    path: Assets/GameFlow/Menu.unity
+    guid: 160ba7aa6a0deb548a13c4a0ef490ef4
+  - enabled: 1
+    path: Assets/GameFlow/Game.unity
+    guid: 9a524b6d506563643be7f469db481a0c
+  - enabled: 1
+    path: Assets/GameFlow/GameOver.unity
+    guid: 07319dddb40212c43a5ee4d5210dfce8
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 9e7be553448fa2546aea5752021cbcf7,
       type: 2}
